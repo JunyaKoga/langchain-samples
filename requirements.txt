@@ -1,0 +1,4 @@
+jupyter
+langchain-core
+langchain-openai
+python-dotenv
