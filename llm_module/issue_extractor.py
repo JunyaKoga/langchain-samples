@@ -27,15 +27,15 @@ def structured_issue_extractor(llm):
 
     使用例:
     from langchain_openai import ChatOpenAI
-    from my_llm_module import structured_issue_extractor
+    from llm_module import structured_issue_extractor
 
     # LLMの定義
     llm = ChatOpenAI(model="gpt-3.5-turbo-0125")
 
-    # Issue Extractorの設定と実行
-    issue_extractor_instance = structured_issue_extractor(llm)
+    # 実行
+    issue_extractor = structured_issue_extractor(llm)
     question = "こんにちは、先日注文した商品（注文番号：12345）の発送状況についてお伺いしたいのですが、まだ発送通知が届いていないので現在のステータスを教えてください。また、発送がまだであればいつ頃発送される予定かも知りたいです。さらに、もし商品に不具合があった場合や配送中に破損が発生した場合の対応方法についても教えてもらえますか？よろしくお願いします。"
-    generated_issue = issue_extractor_instance.invoke({"input": question})
+    generated_issue = issue_extractor.invoke({"input": question})
 
     # 出力例:
     # generated_issue.questions
